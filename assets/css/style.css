@@ -14,29 +14,19 @@ body {
 /* Sidebar instellingen */
 .sidebar {
     height: 100vh;
-    /* Volledige hoogte van het scherm */
     width: 250px;
-    /* Breedte van de zijbalk als deze uitgeklapt is */
     position: fixed;
-    /* De sidebar blijft aan de linkerkant van het scherm */
     top: 0;
     left: 0;
-    /* Altijd aan de linkerkant van het scherm */
     background-color: #343a40;
-    /* Donkere achtergrondkleur */
     color: #fff;
-    /* Witte tekstkleur */
     padding-top: 20px;
-    /* Ruimte bovenaan */
     z-index: 1000;
-    /* Zorg ervoor dat de sidebar bovenop ligt */
     transition: width 0.3s ease;
-    /* Overgang voor de breedte bij het in- of uitklappen */
 }
 
 .sidebar.collapsed {
     width: 80px;
-    /* Verklein de breedte van de sidebar wanneer deze is ingeklapt */
 }
 
 #logo-side {
@@ -47,19 +37,14 @@ body {
     margin-right: -75px;
 }
 
-/* Nav-item en text instellingen */
 .sidebar .nav-link {
     color: #fff;
-    /* Witte kleur voor de links */
     display: flex;
-    /* Flexbox om de tekst en iconen naast elkaar te plaatsen */
     align-items: center;
-    /* Verticale uitlijning van de iconen en tekst */
 }
 
 .sidebar .nav-link i {
     margin-right: 10px;
-    /* Ruimte tussen het icoon en de tekst */
 }
 
 .sidebar .text {
@@ -69,40 +54,33 @@ body {
 
 .sidebar.collapsed .text {
     opacity: 0;
-    /* Verberg de tekst wanneer de sidebar is ingeklapt */
 }
 
 .sidebar.collapsed i {
     margin-left: 0;
-    /* Verplaats iconen naar links als de sidebar is ingeklapt */
 }
 
 /* Main content instellingen */
 .main-content {
     margin-left: 250px;
-    /* Ruimte voor de sidebar (komt overeen met de breedte van de sidebar) */
     padding: 20px;
     transition: margin-left 0.3s ease;
-    /* Overgang voor margin-left als de sidebar wordt ingeklapt */
 }
 
 .sidebar.collapsed+.main-content {
     margin-left: 80px;
-    /* Verklein de marge voor de hoofdinhoud wanneer de sidebar ingeklapt is */
 }
 
 #toggle-icon {
     transition: transform 0.3s ease;
 }
 
-/* Als de sidebar ingeklapt is, veranderen we het icoon */
 .sidebar.collapsed #toggle-icon {
     transform: rotate(180deg);
-    /* Draai het icoon bij het ingeklapt zijn */
 }
 
 /* CSS voor de bottom bar, standaard verborgen op grote schermen */
-.bottom-bar {
+.phone-side-bar {
     display: none;
     position: fixed;
     bottom: 0;
@@ -112,23 +90,22 @@ body {
     z-index: 1000;
 }
 
-.bottom-bar .nav-link {
+.phone-side-bar .nav-link {
     color: white;
     text-align: center;
     padding: 10px 0;
 }
 
-.bottom-bar .nav-link i {
+.phone-side-bar .nav-link i {
     font-size: 24px;
 }
 
 /* Maak de bottom bar zichtbaar op kleine schermen */
 @media (max-width: 768px) {
-    .bottom-bar {
+    .phone-side-bar {
         display: block;
     }
 
-    /* Zorg ervoor dat de sidebar op kleine schermen niet zichtbaar is */
     .sidebar {
         display: none;
     }
