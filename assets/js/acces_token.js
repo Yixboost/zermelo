@@ -49,50 +49,30 @@ async function fetchAppointments(date) {
   const authorizationCode =
     document.getElementById("authorization").value;
 
-  async function checkAuthorizationCode() {
-  const user = document.getElementById("user").value;
-  const schoolName = document.getElementById("schoolName").value;
-  const authorizationCode = document.getElementById("authorization").value;
+  // Step 1: Exchange authorization code for an access token
+  const tokenResponse = await fetch(
+    `https://${schoolName}.zportal.nl/api/v3/oauth/token`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `grant_type=authorization_code&code=${authorizationCode}`,
+    }
+  );
 
-  if (!authorizationCode) {
-    console.log("Wachten op authorization code...");
+  const tokenData = await tokenResponse.json();
+  const accessToken = tokenData.access_token;
+
+  if (!accessToken) {
+    console.error("Failed to obtain access token.");
     return;
   }
 
-  try {
-    // Stap 1: Authorization code uitwisselen voor een toegangstoken
-    const tokenResponse = await fetch(
-      `https://${schoolName}.zportal.nl/api/v3/oauth/token`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: `grant_type=authorization_code&code=${authorizationCode}`,
-      }
-    );
-
-    const tokenData = await tokenResponse.json();
-    const accessToken = tokenData.access_token;
-
-    if (!accessToken) {
-      console.error("Kon geen toegangstoken verkrijgen.");
-      return;
-    }
-
-    // Sla de toegangstoken op en update de UI
+  if (accessToken !== "") {
     document.getElementById("authorizationCode").value = accessToken;
     localStorage.setItem("authorizationCode", accessToken);
-
-    console.log("Toegangstoken verkregen:", accessToken);
-  } catch (error) {
-    console.error("Fout bij ophalen toegangstoken:", error);
   }
-}
-
-// Controleer periodiek (bijv. elke 5 seconden)
-setInterval(checkAuthorizationCode, 5000); // Controleer elke 5 seconden
-
 
   const token = document.getElementById("authorizationCode").value;
 
