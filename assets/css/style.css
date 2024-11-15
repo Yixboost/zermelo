@@ -79,50 +79,64 @@ body {
     transform: rotate(180deg);
 }
 
-/* CSS voor de bottom bar, standaard verborgen op grote schermen */
+/* CSS voor de side-bar, standaard verborgen op grote schermen */
+.phone-bar-button {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Startpositie */
+    color: white;
+    background-color: #4444448a;
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: none; /* verbergen op pc*/
+    justify-content: center;
+    align-items: center;
+    border: none;
+    z-index: 10000;
+    cursor: pointer;
+    transition: background-color 0.2s ease, left 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .phone-bar-button{
+        display: flex;
+    }
+}
+
+.phone-bar-button:hover {
+    background-color: #555;
+}
+
+/* Sidebar CSS blijft hetzelfde */
 .phone-side-bar {
     display: none;
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 100%;
+    height: 100%;
+    width: 250px;
     background-color: #333;
-    z-index: 1000;
+    z-index: 9999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
 }
 
-.phone-side-bar .nav-link {
-    color: white;
-    text-align: center;
-    padding: 10px 0;
+.phone-side-bar .phone-bar-contents {
+    padding: 20px;
 }
 
-.phone-side-bar .nav-link i {
-    font-size: 24px;
-}
-
-/* Maak de bottom bar zichtbaar op kleine schermen */
+/* Sidebar zichtbaar op kleine schermen */
 @media (max-width: 768px) {
     .phone-side-bar {
         display: block;
     }
-
-    .sidebar {
-        display: none;
-    }
-
-    #main-content {
-        margin-left: 0px;
-        margin-bottom: 30px;
-    }
-
-    #settingsButton {
-        display: none;
-    }
-
-    #add {
-        bottom: 30px;
-    }
 }
+
+
 
 /* Zorg ervoor dat de content altijd goed zichtbaar is */
 body {

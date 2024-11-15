@@ -10,6 +10,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
   <link id="color-theme" rel="stylesheet" href="assets/css/style.css">
+
+  <script src="script.js"></script>
 </head>
 
 <body class="user-select-none">
@@ -23,7 +25,7 @@
   <!-- Main Content -->
   <div class="main-content container-fluid" id="main-content">
     <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
+    <div class="sidebar collapsed" id="sidebar">
       <div class="nav-item">
         <h5 class="text-center mt-3" style="display: flex; align-items: center; justify-content: center;">
           <img src="assets/images/logo.png" width="50px" id="logo-side">
@@ -61,32 +63,34 @@
       </ul>
     </div>
 
-    <!-- Bottom bar for small screens -->
+    <!-- side-bar for small screens -->
+    <button class="phone-bar-button" id="phone-bar-button"><i class="fa-solid fa-bars"></i></button>
     <div class="phone-side-bar" id="phone-side-bar">
-      <ul class="nav justify-content-around">
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="fas fa-home"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="fas fa-calendar"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#settingsModal">
-            <i class="fas fa-cog"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="fas fa-info-circle"></i>
-          </a>
-        </li>
-      </ul>
+      <div class="phone-bar-contents" id="phone-bar-contents">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-home"></i> Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-calendar"></i> Calendar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#settingsModal">
+              <i class="fas fa-cog"></i> Settings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-info-circle"></i> Info
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-
 
     <!-- Date Input Field -->
     <div id="field" class="d-flex align-items-center justify-content-between gap-2 mb-3">
@@ -219,125 +223,7 @@
   <script type="text/javascript" src="assets/js/webqr.js"></script>
   <script src="assets/js/months.js"></script>
   <script src="assets/js/scheduleDaytest.js"></script>
-  <script src="assets/js/splashScreen.js"></script>
-
-  <script>
-    // Toggle sidebar functie
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      const mainContent = document.getElementById("main-content");
-
-      // Controleer de schermgrootte (bijvoorbeeld breder dan 768px)
-      if (window.innerWidth > 768) {
-        sidebar.classList.toggle("collapsed");
-        if (sidebar.classList.contains("collapsed")) {
-          mainContent.style.marginLeft = "80px";
-        } else {
-          mainContent.style.marginLeft = "250px";
-        }
-      } else {
-        // Als het scherm kleiner is dan 768px, verberg de sidebar volledig
-        sidebar.style.display = "none";
-        mainContent.style.marginLeft = "0px";
-      }
-    }
-
-    // Bij het laden van de pagina zorgen dat de sidebar verborgen wordt op kleinere schermen
-    window.addEventListener('resize', function () {
-      if (window.innerWidth <= 768) {
-        const sidebar = document.getElementById("sidebar");
-        sidebar.style.display = "none";
-        const mainContent = document.getElementById("main-content");
-        mainContent.style.marginLeft = "0px";
-      } else {
-        const sidebar = document.getElementById("sidebar");
-        sidebar.style.display = "";
-        const mainContent = document.getElementById("main-content");
-        mainContent.style.marginLeft = "250px"; // Of wat je standaard marge is
-      }
-    });
-  </script>
-
-
-  <!-- QR Code Observer Script -->
-  <script>
-    function checkQRCode() {
-      const resultElement = document.getElementById("result").innerText;
-      try {
-        const qrData = JSON.parse(resultElement);
-        if (qrData.institution) {
-          localStorage.setItem("schoolName", qrData.institution);
-          localStorage.setItem("authorizationCode", qrData.code);
-          document.getElementById("authorizationCode").value = qrData.code;
-          document.getElementById("schoolName").value = qrData.institution;
-          document.getElementById("result").innerHTML = "";
-          console.log("Data saved to localStorage: ", qrData);
-        }
-      } catch (e) {
-        console.error("Invalid QR code format or error parsing JSON:", e);
-      }
-    }
-
-    const observer = new MutationObserver(checkQRCode);
-    observer.observe(document.getElementById("result"), {
-      childList: true
-    });
-  </script>
-  <script>
-    // Functie om een cookie op te slaan
-    function setCookie(name, value, days) {
-      let date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));  // Cookie verloopt na de opgegeven dagen
-      let expires = "expires=" + date.toUTCString();
-      document.cookie = name + "=" + value + ";" + expires + ";path=/";
-    }
-  
-    // Functie om een cookie te krijgen
-    function getCookie(name) {
-      let nameEq = name + "=";
-      let ca = document.cookie.split(';');
-      for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEq) == 0) return c.substring(nameEq.length, c.length);
-      }
-      return "";
-    }
-  
-    // Functie om het geselecteerde kleurthema in de cookie op te slaan en het CSS-bestand in te laden
-    document.getElementById("color-select").addEventListener("change", function() {
-      let selectedValue = this.value;  // Verkrijg de geselecteerde waarde
-      setCookie("selectedTheme", selectedValue, 7);  // Sla het thema op in een cookie voor 7 dagen
-  
-      // Verander het CSS-bestand door de juiste te laden
-      loadCSS(selectedValue);
-    });
-  
-    // Functie om het juiste CSS-bestand te laden
-    function loadCSS(theme) {
-      let link = document.getElementById("theme-stylesheet");
-  
-      // Als het theme-stylesheet al bestaat, update de href, anders maak een nieuw link-element aan
-      if (!link) {
-        link = document.createElement("link");
-        link.id = "theme-stylesheet";
-        link.rel = "stylesheet";
-        document.head.appendChild(link);
-      }
-  
-      link.href = `assets/css/${theme}.css`;  // Laad het CSS-bestand op basis van de geselecteerde waarde
-    }
-  
-    // Wanneer de pagina wordt geladen, kijk of er een thema is opgeslagen in de cookie
-    window.onload = function() {
-      let theme = getCookie("selectedTheme");
-      if (theme) {
-        document.getElementById("color-select").value = theme;  // Zet de waarde van de select op de opgeslagen waarde
-        loadCSS(theme);  // Laad het bijbehorende CSS-bestand
-      }
-    }
-  </script>
-  
+  <script src="assets/js/splashScreen.js"></script> 
 </body>
 
 </html>
