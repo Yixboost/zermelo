@@ -1,0 +1,138 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(45deg, #f06292, #f48fb1, #f8bbd0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #e0e0e0;
+    background-attachment: fixed;
+}
+
+.main-content {
+    background-color: transparent !important;
+}
+
+.sidebar {
+    background-color: #f06292;
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.7);
+}
+
+.sidebar .nav-link {
+    color: #ffffff;
+}
+
+.sidebar.collapsed .nav-link {
+    color: #ffffff;
+}
+
+.main-content {
+    background-color: #f8bbd0;
+}
+
+.lesson,
+.activity {
+    background-color: #f8bbd0;
+    border-left: 5px solid #f06292;
+    box-shadow: 0 0 5px rgba(233, 30, 99, 0.5);
+}
+
+.lesson:hover {
+    background-color: #f48fb1;
+    box-shadow: 0 0 10px rgba(233, 30, 99, 0.8);
+}
+
+.btn,
+.modal-footer .btn {
+    background-color: #f06292;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(233, 30, 99, 0.7);
+}
+
+.btn:hover,
+.modal-footer .btn:hover {
+    background-color: #f48fb1;
+    box-shadow: 0 0 15px rgba(233, 30, 99, 1);
+}
+
+.warning {
+    color: #ff5722;
+}
+
+.warning:hover .warningMessage {
+    background-color: #ff5722;
+}
+
+.warningMessage {
+    background-color: #ff5722;
+    color: white;
+}
+
+.bottom-bar {
+    background-color: #f06292;
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.7);
+}
+
+.bottom-bar .nav-link {
+    color: white;
+}
+
+.bottom-bar .nav-link i {
+    font-size: 24px;
+}
+
+.form-label {
+    color: #f06292;
+}
+
+.form-check-label {
+    color: #e0e0e0;
+}
+
+.modal-header {
+    background-color: #f06292;
+    color: white;
+    box-shadow: 0 0 10px rgba(233, 30, 99, 0.8);
+}
+
+.modal-body {
+    background-color: #f8bbd0;
+    color: #e0e0e0;
+}
+
+.modal-footer .btn {
+    background-color: #f06292;
+    color: white;
+    box-shadow: 0 0 10px rgba(233, 30, 99, 0.7);
+}
+
+.modal-footer .btn:hover {
+    background-color: #f48fb1;
+    box-shadow: 0 0 15px rgba(233, 30, 99, 1);
+}
+
+.modal-body .form-control {
+    background-color: #f48fb1;
+    color: #e0e0e0;
+    border: 1px solid #f06292;
+    box-shadow: 0 0 5px rgba(233, 30, 99, 0.5);
+}
+
+.modal-body .form-control:focus {
+    border-color: #ff5722;
+    box-shadow: 0 0 10px rgba(233, 30, 99, 0.7);
+}
+
+#error-message {
+    color: #ff5722;
+}
+
+.modal-body .form-control:focus {
+    border-color: black;
+}
+
+.modal-title {
+    color: white;
+}

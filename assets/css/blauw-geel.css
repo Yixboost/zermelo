@@ -1,0 +1,141 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(45deg, #1e3a5f, #354e73, #4e658a);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #dcdcdc;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+}
+
+.main-content {
+    background-color: transparent !important;
+}
+
+.sidebar {
+    background-color: #2a496c;
+    box-shadow: 0 0 10px rgba(42, 73, 108, 0.4);
+}
+
+.sidebar .nav-link {
+    color: #f5f5f5;
+}
+
+.sidebar.collapsed .nav-link {
+    color: #f5f5f5;
+}
+
+.main-content {
+    background-color: #1c1c1c;
+}
+
+.lesson,
+.activity {
+    background-color: #2c2c2c;
+    border-left: 4px solid #2a496c;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.lesson:hover {
+    background-color: #383838;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn,
+.modal-footer .btn {
+    background-color: #2a496c;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(42, 73, 108, 0.3);
+}
+
+.btn:hover,
+.modal-footer .btn:hover {
+    background-color: #233f5a;
+    box-shadow: 0 3px 8px rgba(35, 63, 90, 0.4);
+}
+
+.warning {
+    color: #d97742;
+}
+
+.warning:hover .warningMessage {
+    background-color: #d97742;
+}
+
+.warningMessage {
+    background-color: #d97742;
+    color: white;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.bottom-bar {
+    background-color: #2a496c;
+    box-shadow: 0 0 10px rgba(42, 73, 108, 0.3);
+}
+
+.bottom-bar .nav-link {
+    color: white;
+}
+
+.bottom-bar .nav-link i {
+    font-size: 22px;
+}
+
+.form-label {
+    color: #3e5c86;
+}
+
+.form-check-label {
+    color: #dcdcdc;
+}
+
+.modal-header {
+    background-color: #2a496c;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal-body {
+    background-color: #2c2c2c;
+    color: #dcdcdc;
+}
+
+.modal-footer .btn {
+    background-color: #2a496c;
+    color: white;
+    box-shadow: 0 2px 6px rgba(42, 73, 108, 0.3);
+}
+
+.modal-footer .btn:hover {
+    background-color: #233f5a;
+    box-shadow: 0 3px 8px rgba(35, 63, 90, 0.4);
+}
+
+.modal-body .form-control {
+    background-color: #404040;
+    color: #dcdcdc;
+    border: 1px solid #2a496c;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-body .form-control:focus {
+    border-color: #d97742;
+    box-shadow: 0 0 5px rgba(217, 119, 66, 0.4);
+}
+
+#error-message {
+    color: #d97742;
+}
+
+.modal-title {
+    color: white;
+}
+
+#logo-side {
+    filter: brightness(0.8) invert(0.9);
+}

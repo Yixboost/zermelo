@@ -1,0 +1,137 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(45deg, #fdf6e3, #fcf4d9, #f7edd0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #4a4a4a;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+}
+
+.main-content {
+    background-color: transparent !important;
+}
+
+.sidebar {
+    background-color: #f8e8b6;
+    box-shadow: 0 0 10px rgba(240, 220, 150, 0.5);
+}
+
+.sidebar .nav-link {
+    color: #4a4a4a;
+}
+
+.sidebar.collapsed .nav-link {
+    color: #4a4a4a;
+}
+
+.main-content {
+    background-color: #faf3d0;
+}
+
+.lesson,
+.activity {
+    background-color: #faf3d0;
+    border-left: 5px solid #f2d78e;
+    box-shadow: 0 0 5px rgba(240, 200, 120, 0.4);
+}
+
+.lesson:hover {
+    background-color: #f2d78e;
+    box-shadow: 0 0 10px rgba(240, 200, 120, 0.7);
+}
+
+.btn,
+.modal-footer .btn {
+    background-color: #f2d78e;
+    color: #4a4a4a;
+    box-shadow: 0 0 8px rgba(240, 200, 120, 0.5);
+}
+
+.btn:hover,
+.modal-footer .btn:hover {
+    background-color: #f8e8b6;
+    box-shadow: 0 0 12px rgba(240, 220, 150, 0.8);
+}
+
+.warning {
+    color: #d9886e;
+}
+
+.warning:hover .warningMessage {
+    background-color: #d9886e;
+}
+
+.warningMessage {
+    background-color: #d9886e;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.bottom-bar {
+    background-color: #f8e8b6;
+    box-shadow: 0 0 10px rgba(240, 220, 150, 0.5);
+}
+
+.bottom-bar .nav-link {
+    color: #4a4a4a;
+}
+
+.bottom-bar .nav-link i {
+    font-size: 24px;
+}
+
+.form-label {
+    color: #d3a766;
+}
+
+.form-check-label {
+    color: #4a4a4a;
+}
+
+.modal-header {
+    background-color: #f2d78e;
+    color: #4a4a4a;
+    box-shadow: 0 0 8px rgba(240, 200, 120, 0.6);
+}
+
+.modal-body {
+    background-color: #faf3d0;
+    color: #4a4a4a;
+}
+
+.modal-footer .btn {
+    background-color: #f2d78e;
+    color: #4a4a4a;
+    box-shadow: 0 0 8px rgba(240, 200, 120, 0.5);
+}
+
+.modal-footer .btn:hover {
+    background-color: #f8e8b6;
+    box-shadow: 0 0 12px rgba(240, 220, 150, 0.8);
+}
+
+.modal-body .form-control {
+    background-color: #fdf6e3;
+    color: #4a4a4a;
+    border: 1px solid #f2d78e;
+    box-shadow: 0 0 5px rgba(240, 200, 120, 0.3);
+}
+
+.modal-body .form-control:focus {
+    border-color: #d9886e;
+    box-shadow: 0 0 8px rgba(240, 200, 120, 0.5);
+}
+
+#error-message {
+    color: #d9886e;
+}
+
+.modal-title {
+    color: #4a4a4a;
+}

@@ -1,0 +1,158 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(45deg, #6a1b9a, #9c4dcc, #ba68c8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #e0e0e0;
+    background-attachment: fixed;
+}
+
+.main-content {
+    background-color: transparent !important;
+}
+
+.sidebar {
+    background-color: #7b1fa2;
+    box-shadow: 0 0 15px rgba(123, 31, 162, 0.7);
+}
+
+.sidebar .nav-link {
+    color: #ffffff;
+}
+
+.sidebar.collapsed .nav-link {
+    color: #ffffff;
+}
+
+.main-content {
+    background-color: #6a1b9a;
+}
+
+.lesson,
+.activity {
+    background-color: #8e24aa;
+    border-left: 5px solid #9c4dcc;
+    box-shadow: 0 0 5px rgba(123, 31, 162, 0.5);
+}
+
+.lesson:hover {
+    background-color: #9c4dcc;
+    box-shadow: 0 0 10px rgba(123, 31, 162, 0.8);
+}
+
+.btn,
+.modal-footer .btn {
+    background-color: #9c4dcc;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(123, 31, 162, 0.7);
+}
+
+.btn:hover,
+.modal-footer .btn:hover {
+    background-color: #7b1fa2;
+    box-shadow: 0 0 15px rgba(123, 31, 162, 1);
+}
+
+.warning {
+    color: #ff5722;
+}
+
+.warning:hover .warningMessage {
+    background-color: #ff5722;
+}
+
+.warningMessage {
+    background-color: #ff5722;
+    color: white;
+}
+
+.bottom-bar {
+    background-color: #7b1fa2;
+    box-shadow: 0 0 15px rgba(123, 31, 162, 0.7);
+}
+
+.bottom-bar .nav-link {
+    color: white;
+}
+
+.bottom-bar .nav-link i {
+    font-size: 24px;
+}
+
+.form-label {
+    color: #9c4dcc;
+}
+
+.form-check-label {
+    color: #e0e0e0;
+}
+
+.modal-header {
+    background-color: #9c4dcc;
+    color: white;
+    box-shadow: 0 0 10px rgba(123, 31, 162, 0.8);
+}
+
+.modal-body {
+    background-color: #8e24aa;
+    color: #e0e0e0;
+}
+
+.modal-footer .btn {
+    background-color: #9c4dcc;
+    color: white;
+    box-shadow: 0 0 10px rgba(123, 31, 162, 0.7);
+}
+
+.modal-footer .btn:hover {
+    background-color: #7b1fa2;
+    box-shadow: 0 0 15px rgba(123, 31, 162, 1);
+}
+
+.modal-body .form-control {
+    background-color: #9c4dcc;
+    color: #e0e0e0;
+    border: 1px solid #7b1fa2;
+    box-shadow: 0 0 5px rgba(123, 31, 162, 0.5);
+}
+
+.modal-body .form-control:focus {
+    border-color: #ff5722;
+    box-shadow: 0 0 10px rgba(123, 31, 162, 0.7);
+}
+
+#error-message {
+    color: #ff5722;
+}
+
+.modal-body .form-control:focus {
+    border-color: black;
+}
+
+.modal-title {
+    color: white;
+}
+
+#logo-side {
+    filter: brightness(0) invert(1);
+}
+
+#vaknaam, #timeSlot {
+    color:#fff !important;
+}
+
+.btn-outline-primary {
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-active-bg: #8e24aa;
+    --bs-btn-active-border-color: #8e24aa;
+}
+
+.btn {
+    --bs-btn-border-color: #8e24aa;
+    --bs-btn-hover-border-color: #8e24aa;
+}

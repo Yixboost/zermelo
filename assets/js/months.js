@@ -1,0 +1,38 @@
+$(function () {
+    $("#dateInput").datepicker({
+      firstDay: 1,
+      dateFormat: "D d M",
+      dayNamesShort: ["zo", "ma", "di", "wo", "do", "vr", "za"],
+      dayNamesMin: ["zo", "ma", "di", "wo", "do", "vr", "za"],
+      monthNames: [
+        "januari",
+        "februari",
+        "maart",
+        "april",
+        "mei",
+        "juni",
+        "juli",
+        "augustus",
+        "september",
+        "oktober",
+        "november",
+        "december",
+      ],
+      monthNamesShort: [
+        "jan",
+        "feb",
+        "mar",
+        "apr",
+        "mei",
+        "jun",
+        "jul",
+        "aug",
+        "sep",
+        "okt",
+        "nov",
+        "dec",
+      ],
+      showAnim: "puff",
+      maxDate: "+2w",
+    });
+  });

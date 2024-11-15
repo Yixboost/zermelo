@@ -1,0 +1,384 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+}
+
+/* Algemene reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sidebar instellingen */
+.sidebar {
+    height: 100vh;
+    /* Volledige hoogte van het scherm */
+    width: 250px;
+    /* Breedte van de zijbalk als deze uitgeklapt is */
+    position: fixed;
+    /* De sidebar blijft aan de linkerkant van het scherm */
+    top: 0;
+    left: 0;
+    /* Altijd aan de linkerkant van het scherm */
+    background-color: #343a40;
+    /* Donkere achtergrondkleur */
+    color: #fff;
+    /* Witte tekstkleur */
+    padding-top: 20px;
+    /* Ruimte bovenaan */
+    z-index: 1000;
+    /* Zorg ervoor dat de sidebar bovenop ligt */
+    transition: width 0.3s ease;
+    /* Overgang voor de breedte bij het in- of uitklappen */
+}
+
+.sidebar.collapsed {
+    width: 80px;
+    /* Verklein de breedte van de sidebar wanneer deze is ingeklapt */
+}
+
+#logo-side {
+    margin-right: 10px;
+}
+
+.sidebar.collapsed .nav-item .text-center #logo-side {
+    margin-right: -75px;
+}
+
+/* Nav-item en text instellingen */
+.sidebar .nav-link {
+    color: #fff;
+    /* Witte kleur voor de links */
+    display: flex;
+    /* Flexbox om de tekst en iconen naast elkaar te plaatsen */
+    align-items: center;
+    /* Verticale uitlijning van de iconen en tekst */
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+    /* Ruimte tussen het icoon en de tekst */
+}
+
+.sidebar .text {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .text {
+    opacity: 0;
+    /* Verberg de tekst wanneer de sidebar is ingeklapt */
+}
+
+.sidebar.collapsed i {
+    margin-left: 0;
+    /* Verplaats iconen naar links als de sidebar is ingeklapt */
+}
+
+/* Main content instellingen */
+.main-content {
+    margin-left: 250px;
+    /* Ruimte voor de sidebar (komt overeen met de breedte van de sidebar) */
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    /* Overgang voor margin-left als de sidebar wordt ingeklapt */
+}
+
+.sidebar.collapsed+.main-content {
+    margin-left: 80px;
+    /* Verklein de marge voor de hoofdinhoud wanneer de sidebar ingeklapt is */
+}
+
+#toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Als de sidebar ingeklapt is, veranderen we het icoon */
+.sidebar.collapsed #toggle-icon {
+    transform: rotate(180deg);
+    /* Draai het icoon bij het ingeklapt zijn */
+}
+
+/* CSS voor de bottom bar, standaard verborgen op grote schermen */
+.bottom-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+}
+
+.bottom-bar .nav-link {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.bottom-bar .nav-link i {
+    font-size: 24px;
+}
+
+/* Maak de bottom bar zichtbaar op kleine schermen */
+@media (max-width: 768px) {
+    .bottom-bar {
+        display: block;
+    }
+
+    /* Zorg ervoor dat de sidebar op kleine schermen niet zichtbaar is */
+    .sidebar {
+        display: none;
+    }
+
+    #main-content {
+        margin-left: 0px;
+        margin-bottom: 30px;
+    }
+
+    #settingsButton {
+        display: none;
+    }
+
+    #add {
+        bottom: 30px;
+    }
+}
+
+/* Zorg ervoor dat de content altijd goed zichtbaar is */
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+.test {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.test #vaknaam {
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.test #timeSlot {
+    font-size: 1.5rem;
+    color: #007bff;
+    right: 20px;
+}
+
+.test p {
+    margin: 5px 0;
+}
+
+.test p span {
+    color: #b0bec5;
+}
+
+.lesson {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.lesson #vaknaam {
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.lesson #timeSlot {
+    font-size: 1.5rem;
+    color: #007bff;
+    right: 20px;
+}
+
+.lesson p {
+    margin: 5px 0;
+}
+
+.lesson p span {
+    color: #b0bec5;
+}
+
+.cancelled {
+    background-color: #381c1c;
+}
+
+.warning {
+    color: #ff5722;
+}
+
+.warning:hover .warningMessage {
+    display: block;
+}
+
+.warningMessage {
+    display: none;
+    position: absolute;
+    left: 20%;
+    background-color: #ff5722;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
+
+.className {
+    font-weight: bold;
+    margin-top: 10px;
+    display: none;
+}
+
+.lesson:hover {
+    background-color: #2a2a2a;
+    cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    .lesson {
+        padding: 10px;
+    }
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #00bcd4, #2196f3, #3f51b5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.logo {
+    width: 150px;
+}
+
+.btn {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-content {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.modal-header {
+    border-bottom: 1px solid #333;
+    background-color: #2a2a2a;
+    color: #007bff;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.modal-body {
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #b0bec5;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.form-check-label {
+    margin-left: 5px;
+    color: #e0e0e0;
+}
+
+.modal-footer .btn {
+    background-color: #333;
+    color: #e0e0e0;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-footer .btn:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.modal-body .form-control {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+.modal-body .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(87, 123, 255, 0.25);
+}
+
+#color-select {
+    background: #333;
+    color: white;
+    border: 2px solid #1d1d1d;
+}
+
+#error-message {
+    margin-top: 20px;
+}
+
+#error-message img {
+    max-width: 100px;
+}
+
+#add {
+    background-color: #094280;
+    border: none;
+}
+
+#add:hover {
+    background-color: #288dfa;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-check-label {
+    margin-left: 5px;
+}
+
+@media (max-width: 576px) {
+    .splash-screen {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+}

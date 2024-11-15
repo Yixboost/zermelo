@@ -1,0 +1,162 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(45deg, #388e3c, #4caf50, #81c784);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #e0e0e0;
+    background-attachment: fixed;
+}
+
+.main-content {
+    background-color: transparent !important;
+}
+
+.sidebar {
+    background-color: #388e3c;
+    box-shadow: 0 0 15px rgba(56, 142, 60, 0.7);
+}
+
+.sidebar .nav-link {
+    color: #ffffff;
+}
+
+.sidebar.collapsed .nav-link {
+    color: #ffffff;
+}
+
+.main-content {
+    background-color: #81c784;
+}
+
+.lesson,
+.activity {
+    background-color: #81c784;
+    border-left: 5px solid #4caf50;
+    box-shadow: 0 0 5px rgba(56, 142, 60, 0.5);
+}
+
+.lesson:hover {
+    background-color: #4caf50;
+    box-shadow: 0 0 10px rgba(56, 142, 60, 0.8);
+}
+
+.btn,
+.modal-footer .btn {
+    background-color: #4caf50;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(56, 142, 60, 0.7);
+}
+
+.btn:hover,
+.modal-footer .btn:hover {
+    background-color: #388e3c;
+    box-shadow: 0 0 15px rgba(56, 142, 60, 1);
+}
+
+.warning {
+    color: #ff5722;
+}
+
+.warning:hover .warningMessage {
+    background-color: #ff5722;
+}
+
+.warningMessage {
+    background-color: #ff5722;
+    color: white;
+}
+
+.bottom-bar {
+    background-color: #388e3c;
+    box-shadow: 0 0 15px rgba(56, 142, 60, 0.7);
+}
+
+.bottom-bar .nav-link {
+    color: white;
+}
+
+.bottom-bar .nav-link i {
+    font-size: 24px;
+}
+
+.form-label {
+    color: #4caf50;
+}
+
+.form-check-label {
+    color: #e0e0e0;
+}
+
+.modal-header {
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0 0 10px rgba(56, 142, 60, 0.8);
+}
+
+.modal-body {
+    background-color: #81c784;
+    color: #e0e0e0;
+}
+
+.modal-footer .btn {
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0 0 10px rgba(56, 142, 60, 0.7);
+}
+
+.modal-footer .btn:hover {
+    background-color: #388e3c;
+    box-shadow: 0 0 15px rgba(56, 142, 60, 1);
+}
+
+.modal-body .form-control {
+    background-color: #4caf50;
+    color: #e0e0e0;
+    border: 1px solid #388e3c;
+    box-shadow: 0 0 5px rgba(56, 142, 60, 0.5);
+}
+
+.modal-body .form-control:focus {
+    border-color: #ff5722;
+    box-shadow: 0 0 10px rgba(56, 142, 60, 0.7);
+}
+
+#error-message {
+    color: #ff5722;
+}
+
+.modal-body .form-control:focus {
+    border-color: black;
+}
+
+.modal-title {
+    color: white;
+}
+
+#logo-side {
+    filter: brightness(0) invert(1);
+}
+
+#vaknaam, #timeSlot {
+    color:#fff !important;
+}
+
+p, span {
+    color: white !important;
+}
+
+.btn-outline-primary {
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-active-bg: #81c784;
+    --bs-btn-active-border-color: #81c784;
+}
+
+.btn {
+    --bs-btn-border-color: #81c784;
+    --bs-btn-hover-border-color: #81c784;
+}

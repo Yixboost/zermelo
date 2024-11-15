@@ -1,0 +1,132 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(45deg, #0000ff, #4d4dff, #9999ff);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #e0e0e0;
+    background-attachment: fixed;
+}
+
+.main-content {
+    background-color: transparent !important;
+}
+
+.sidebar {
+    background-color: #1976d2;
+}
+
+.sidebar .nav-link {
+    color: #ffffff;
+}
+
+.sidebar.collapsed .nav-link {
+    color: #ffffff;
+}
+
+.main-content {
+    background-color: #121212;
+}
+
+.lesson,
+.activity {
+    background-color: #333333;
+    border-left: 5px solid #1976d2;
+}
+
+.lesson:hover {
+    background-color: #444444;
+}
+
+.btn,
+.modal-footer .btn {
+    background-color: #1976d2;
+    color: #fff;
+}
+
+.btn:hover,
+.modal-footer .btn:hover {
+    background-color: #1565c0;
+}
+
+.warning {
+    color: #ff5722;
+}
+
+.warning:hover .warningMessage {
+    background-color: #ff5722;
+}
+
+.warningMessage {
+    background-color: #ff5722;
+    color: white;
+}
+
+.bottom-bar {
+    background-color: #1976d2;
+}
+
+.bottom-bar .nav-link {
+    color: white;
+}
+
+.bottom-bar .nav-link i {
+    font-size: 24px;
+}
+
+.form-label {
+    color: #1976d2;
+}
+
+.form-check-label {
+    color: #e0e0e0;
+}
+
+.modal-header {
+    background-color: #1976d2;
+    color: white;
+}
+
+.modal-body {
+    background-color: #333333;
+    color: #e0e0e0;
+}
+
+.modal-footer .btn {
+    background-color: #1976d2;
+    color: white;
+}
+
+.modal-footer .btn:hover {
+    background-color: #1565c0;
+}
+
+.modal-body .form-control {
+    background-color: #555555;
+    color: #e0e0e0;
+    border: 1px solid #1976d2;
+}
+
+.modal-body .form-control:focus {
+    border-color: #ff5722;
+    box-shadow: 0 0 0 0.2rem rgba(255, 87, 34, 0.25);
+}
+
+#error-message {
+    color: #ff5722;
+}
+
+.modal-body .form-control:focus {
+    border-color: black;
+}
+
+.modal-title {
+    color: white;
+}
+
+#logo-side {
+    filter: brightness(0) invert(1);
+}
