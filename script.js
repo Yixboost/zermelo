@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-//    QR code
+//    QR code  (niet in gebruik)
 function checkQRCode() {
     const resultElement = document.getElementById("result").innerText;
     try {
@@ -92,9 +92,9 @@ function checkQRCode() {
   }
 
   const observer = new MutationObserver(checkQRCode);
-  observer.observe(document.getElementById("result"), {
-    childList: true
-  });
+  //observer.observe(document.getElementById("result"), {
+  //  childList: true
+  //});   uncomment if using again LOL
 
 
 

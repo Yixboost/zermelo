@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
   <link id="color-theme" rel="stylesheet" href="assets/css/style.css">
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body class="user-select-none">
@@ -156,9 +156,9 @@
                   autocomplete="off" required>
               </div>
 
-              <button type="button" onclick="load();" class="btn btn-primary mb-3">
+              <!-- <button type="button" onclick="load();" class="btn btn-primary mb-3">
                 <i class="fas fa-qrcode me-2"></i>QR-code scannen
-              </button>
+              </button> -->
 
               <div id="outdiv" style="display: none;"></div>
               <div id="result"><canvas id="qr-canvas" width="0" height="0"></canvas></div>
@@ -172,16 +172,16 @@
               <div class="mb-3">
                 <label for="color-select" class="form-label">Thema:</label>
                 <select id="color-select" class="form-select">
-                  <option value="rood">Crimson Blaze</option>
-                  <option value="roze">Rose Quartz</option>
-                  <option value="paars">Purple Majesty</option>
-                  <option value="blauw">Blue Steel</option>
-                  <option value="blauw-geel">Midnight Horizon</option>
+                  <option value="rood">Rood</option>
+                  <option value="roze">Roze</option>
+                  <option value="paars">Paars</option>
+                  <option value="blauw">Blauw</option>
+                  <option value="blauw-geel">Blauw-Geel</option>
                   <option value="groen">Groen</option>
                   <option value="geel">Geel</option>
                   <option value="oranje">Oranje</option>
                   <option value="rainbow">Regenboog</option>
-                  <option value="paars-glow">paars-glow</option>
+                  <option value="paars-glow">Paars-Glow</option>
                   <option value="css">Origineel</option>
                 </select>
               </div>
