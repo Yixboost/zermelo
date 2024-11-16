@@ -531,8 +531,8 @@ css.oninput = () => {
 
 // Functie om dialoogvenster te tonen
 function showDialog() {
-  const dialog = document.getElementById("dialog");
-  dialog.showModal();
+  const dialog = new bootstrap.Modal(document.getElementById("settingsModal"));
+  dialog.show();
 }
 // Functie om de access token te verkrijgen door middel van de koppelcode.
 async function fetchToken(authorizationCode, schoolName) {
@@ -660,11 +660,6 @@ let startX;
 // Add event listener for keydown event on the document
 document.addEventListener("keydown", handleArrowKeyPress);
 
-// Focus on the input field to capture arrow key events
-document.getElementById("keyboard").focus();
-if (typeof navigator.serviceWorker !== "undefined") {
-  navigator.serviceWorker.register("sw.js");
-}
 // Function to apply color theme
 function applyColorTheme(color) {
   // Save selected color to local storage
