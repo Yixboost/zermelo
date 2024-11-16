@@ -1,6 +1,6 @@
 let docTitle = document.title;
 window.addEventListener("blur", () => {
-  document.title = "Rooster Klascal";
+  document.title = "Rooster";
 });
 window.addEventListener("focus", () => {
   document.title = docTitle;
@@ -46,8 +46,7 @@ async function fetchAppointments(date) {
 
   const user = document.getElementById("user").value;
   const schoolName = document.getElementById("schoolName").value;
-  const authorizationCode =
-    document.getElementById("authorization").value;
+  const authorizationCode = document.getElementById("authorizationCode").value;
 
   // Step 1: Exchange authorization code for an access token
   const tokenResponse = await fetch(
@@ -72,6 +71,7 @@ async function fetchAppointments(date) {
   if (accessToken !== "") {
     document.getElementById("authorizationCode").value = accessToken;
     localStorage.setItem("authorizationCode", accessToken);
+    console.log("set authorizationCode (accessToken) in local storage.")
   }
 
   const token = document.getElementById("authorizationCode").value;
@@ -366,11 +366,6 @@ authorizationCode.oninput = () => {
   localStorage.setItem("authorizationCode", authorizationCode.value);
 };
 
-authorization.value = localStorage.getItem("authorization");
-authorization.oninput = () => {
-  localStorage.setItem("authorization", authorization.value);
-};
-
 user.value = localStorage.getItem("user");
 user.oninput = () => {
   localStorage.setItem("user", user.value);
@@ -396,14 +391,15 @@ function hideDialog() {
 }
 document.addEventListener("DOMContentLoaded", function () {
   const schoolName = localStorage.getItem("schoolName") || "";
-  const authorizationCode =
-    localStorage.getItem("authorizationCode") || "";
+  const authorizationCode = localStorage.getItem("authorizationCode") || "";
+  
   if (schoolName.trim() === "" || authorizationCode.trim() === "") {
     // Als een van de opgeslagen waarden leeg is, toon dialoogvenster
     showDialog();
   } else {
   }
 });
+
 // Function to handle loading schedule when button is clicked
 document
   .getElementById("loadSchedule")
@@ -469,4 +465,11 @@ document.addEventListener("DOMContentLoaded", function () {
 schoolName.value = localStorage.getItem("schoolName");
 schoolName.oninput = () => {
   localStorage.setItem("schoolName", schoolName.value);
+  console.debug(schoolName.value);
 };
+
+authorizationCode.value = localStorage.getItem("authorizationCode");
+authorizationCode.oninput = () => {
+  localStorage.setItem("authorizationCode", authorizationCode.value);
+  console.debug(authorizationCode.value);
+}

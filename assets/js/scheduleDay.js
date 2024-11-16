@@ -68,9 +68,7 @@ async function fetchAppointments(date) {
   endDate.setDate(endDate.getDate() + 1);
   const user = document.getElementById("user").value;
   const schoolName = document.getElementById("schoolName").value;
-  const authorizationCode = document
-    .getElementById("authorizationCode")
-    .value.replace(/\s/g, "");
+  const authorizationCode = document.getElementById("authorizationCode").value; //const authorizationCode = document.getElementById("authorizationCode").value.replace(/\s/g, "");
   const startTimestamp = Math.floor(startDate.getTime() / 1000);
   const endTimestamp = Math.floor(endDate.getTime() / 1000);
 
@@ -114,7 +112,7 @@ async function fetchAppointments(date) {
           minute: "2-digit",
         });
 
-        const subjectsMapping = {
+        const subjectsMapping = { //TODO: make this optional and customisable lol (with cookie or stuf like that)
           ak: "Aardrijkskunde",
           en: "Engels",
           fa: "Frans",

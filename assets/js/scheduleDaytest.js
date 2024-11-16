@@ -1,4 +1,17 @@
-const authorizationCode = document.getElementById("authorizationCode").value;
+//const authorizationCode = document.getElementById("authorizationCode").value;
+
+document.addEventListener("DOMContentLoaded", function () {
+  const authorizationCode = document.getElementById("authorizationCode");
+  if (authorizationCode) {
+    authorizationCode.value = localStorage.getItem("authorizationCode");
+    authorizationCode.oninput = () => {
+      localStorage.setItem("authorizationCode", authorizationCode.value);
+    };
+  }
+});
+
+
+
 var authorizationCodeLS = localStorage.getItem("authorizationCode");
 // Wissel de koppelcode in voor de access token (maar alleen als die nog niet in local storage staat)
 let accessToken = localStorage.getItem("access_token");
@@ -144,7 +157,7 @@ function fetchAppointments(date) {
           .replace(/^0+/, "");
 
         // Object met vak afkortingen en hun volledige namen
-        const subjectsMapping = {
+        const subjectsMapping = {  //TODO: make this optional and custimisable
           ak: "Aardrijkskunde",
           en: "Engels",
           fa: "Frans",
@@ -206,6 +219,7 @@ function fetchAppointments(date) {
           wisb: "Wiskunde B",
           wisa: "Wiskunde A",
           Act: "Activiteit",
+          proj: "Project",
           SPORTDAG: "Sportdag",
           bv: "Beeldende vorming",
           me: "Mentorles",
@@ -214,6 +228,7 @@ function fetchAppointments(date) {
           nsk: "Nask",
           ik: "Informatiekunde",
           tsc: "Science",
+          ml: "Mentorles"
         };
 
         // Map subjects abbreviations to full names
@@ -560,16 +575,12 @@ async function hideDialog() {
   const dialog = document.getElementById("dialog");
   const schoolName = document.getElementById("schoolName").value;
   const authorizationCode = document.getElementById("authorizationCode").value;
-  // Wissel de koppelcode in voor de access token (maar alleen als die nog niet in local storage staat)
-  let accessToken = localStorage.getItem("access_token");
-  if (/^\d{12}$/.test(authorizationCode)) {
-    if (accessToken == null || accessToken == "[object Promise]") {
-      accessToken = await fetchToken(authorizationCode, schoolName);
-      localStorage.setItem("access_token", accessToken);
-    }
-  } else if (/^[a-z0-9]{26}$/.test(authorizationCodeLS)) {
-    localStorage.setItem("access_token", authorizationCodeLS);
-  }
+  
+  // Wissel de koppelcode in voor de access token
+  accessToken = await fetchToken(authorizationCode, schoolName);
+  localStorage.setItem("access_token", accessToken);
+  
+  
   // Apply stored color theme on page load
   const storedColor = localStorage.getItem("color");
   if (storedColor) {
